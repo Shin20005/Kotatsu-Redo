@@ -96,7 +96,7 @@ android {
 		// `parsers_bundle_key` in local.properties or PARSERS_BUNDLE_URL and PARSERS_BUNDLE_KEY in the
 		// environment, or set the key to `none` to take no parsers from anywhere.
 		def parsersBundleUrl = readSecret('parsers_bundle_url', 'PARSERS_BUNDLE_URL')
-			?: 'https://github.com/Kotatsu-Redo/kotatsu-parsers-redo/releases/download/parsers-bundle'
+			?: 'https://github.com/Shin20005/kotatsu-parsers-redo/releases/download/parsers-bundle'
 		def parsersBundleKey = readSecret('parsers_bundle_key', 'PARSERS_BUNDLE_KEY') ?: parsersBundlePublicKey
 		if (parsersBundleKey == 'none') {
 			parsersBundleKey = ''
@@ -226,11 +226,11 @@ dependencies {
 	def parsersVersion = libs.versions.parsers.get()
 	if (System.properties.containsKey('parsersVersionOverride')) {
 		// usage:
-		// -DparsersVersionOverride=$(curl -s https://api.github.com/repos/kotatsuapp/kotatsu-parsers/commits/master -H "Accept: application/vnd.github.sha" | cut -c -10)
+		// -DparsersVersionOverride=$(curl -s https://api.github.com/repos/Shin20005/kotatsu-parsers-redo/commits/master -H "Accept: application/vnd.github.sha" | cut -c -10)
 		parsersVersion = System.getProperty('parsersVersionOverride')
 	}
 	//noinspection UseTomlInstead
-	implementation("com.github.clquwu:kotatsu-parsers-redo:$parsersVersion") {
+	implementation("com.github.Shin20005:kotatsu-parsers-redo:$parsersVersion") {
 		exclude group: 'org.json', module: 'json'
 	}
 
