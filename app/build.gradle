@@ -231,7 +231,8 @@ dependencies {
 	}
 	//noinspection UseTomlInstead
 	implementation("com.github.Shin20005:kotatsu-parsers-redo:$parsersVersion") {
-		exclude group: 'org.json', module: 'json'
+    exclude group: 'org.json', module: 'json'
+    exclude module: 'kotatsu-parsers-ksp'
 	}
 
 	coreLibraryDesugaring libs.desugar.jdk.libs
